@@ -17,17 +17,19 @@ function App() {
         let res = await fetch('https://swapi.co/api/people/?format=json');
         let data  = await res.json();
         setPeople(data.results);
+        setLoading(false);
       }
 
       async function fetchPlanets(){
         let res = await fetch('https://swapi.co/api/planets/?format=json');
         let data = await res.json();
         setPlanets(data.results);
+        setLoading(false);
       }
 
       fetchPeople();
       fetchPlanets();
-      setLoading(false);
+      
     }, []);
     return (
       <>

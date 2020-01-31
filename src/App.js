@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
 
 function App() {
   const [people, setPeople] = useState([]);
@@ -21,13 +22,11 @@ function App() {
 
       fetchPeople();
       fetchPlanets();
-      
-    }, [])
-    console.log('people', people);
-    console.log('planets', planets);
+
+    }, []);
     return (
       <div className='App'>
-        Hello 
+        <Navbar/>
       </div>
   );
 }
